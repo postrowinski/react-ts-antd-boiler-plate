@@ -8,6 +8,11 @@
 * [Babel](http://babeljs.io/) (7.x)
 * [SASS](http://sass-lang.com/)
 * [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
+* [Antd](https://ant.design/)
+* [antd-scss-theme-plugin](https://github.com/intoli/antd-scss-theme-plugin) - override less styling variables in scss
+* [React-router](https://github.com/ReactTraining/react-router)
+* [Lodash](https://lodash.com/)
+* [momentjs](https://momentjs.com/)
 * Production build script
 * Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
 * Typescript compiling using [Awesome Typescript Loader](https://github.com/s-panferov/awesome-typescript-loader) (5.x)
