@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Route } from 'react-router';
+import { Redirect, Route } from 'react-router';
 import Contact from "../../pages/Contact/Contact";
 import Home from "../../pages/Home/Home";
 

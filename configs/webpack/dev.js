@@ -12,8 +12,12 @@ module.exports = merge(commonConfig, {
     'webpack/hot/only-dev-server', // bundle the client for hot reloading, only- means to only hot reload for successful updates
     './index.tsx' // the entry point of our app
   ],
+  output: {
+    publicPath: '/'
+  },
   devServer: {
     hot: true, // enable HMR on the server
+    historyApiFallback: true
   },
   devtool: 'cheap-module-eval-source-map',
   plugins: [
