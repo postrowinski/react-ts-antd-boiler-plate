@@ -1,0 +1,9 @@
+{
+    "form.example.name": "Imię",
+    "form.example.submit": "Wyślij",
+    "form.validation.required": "Pole jest wymagane",
+    "local.english": "Angielski",
+    "local.polish": "Polski",
+    "nav.contact": "Kontakt",
+    "nav.home": "Strona główna"
+}

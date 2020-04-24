@@ -6,7 +6,7 @@ const path = require('path');
 const AntdScssThemePlugin = require('antd-scss-theme-plugin');
 const ROOT_PATH = path.join(__dirname, '..', '..');
 const APP_PATH = path.join(ROOT_PATH, 'src');
-const SCSS_PATH = path.join(APP_PATH, 'assets/scss')
+const SCSS_PATH = path.join(APP_PATH, 'assets/scss');
 
 module.exports = {
   resolve: {
@@ -17,12 +17,13 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader', 'source-map-loader'],
+        use: ['babel-loader'],
         exclude: /node_modules/,
       },
       {
         test: /\.tsx?$/,
         use: ['babel-loader', 'awesome-typescript-loader'],
+        include: APP_PATH
       },
       {
         test: /\.css$/,

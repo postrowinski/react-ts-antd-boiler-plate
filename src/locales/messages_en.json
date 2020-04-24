@@ -1,0 +1,9 @@
+{
+    "form.example.name": "Name",
+    "form.example.submit": "Submit",
+    "form.validation.required": "Field is required",
+    "local.english": "English",
+    "local.polish": "Polish",
+    "nav.contact": "Contact",
+    "nav.home": "Home"
+}
