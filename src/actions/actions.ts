@@ -1,16 +1,12 @@
-import { Action } from './actionTypes';
-import { exampleAction, exampleFetchAction } from './exampleAction';
-import { changeLocale, Locale } from './localeAction';
-import { ThunkDispatch } from 'redux-thunk';
+import { ExampleActions, exampleActions } from './exampleAction';
+import { LocaleActions, localeActions } from './localeAction';
 
 export interface Actions {
-    changeLocale: (locale: Locale) => Action<Locale>;
-    exampleAction: (example: number) => Action<number>;
-    exampleFetchAction: () => (dispatch: ThunkDispatch<{}, {}, any>) => Promise<any>
+    exampleActions: ExampleActions;
+    localeActions: LocaleActions;
 }
 
 export const actions: Actions = {
-    changeLocale,
-    exampleAction,
-    exampleFetchAction
+    exampleActions,
+    localeActions
 }

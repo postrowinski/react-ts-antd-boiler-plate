@@ -3,14 +3,19 @@ import jsonPlaceholder from '../api/jsonPlaceholder';
 import { AxiosResponse } from 'axios';
 import { ThunkDispatch } from 'redux-thunk';
 
-export function exampleAction(example: number): Action<number> {
+export interface ExampleActions {
+    exampleAction: (example: number) => Action<number>;
+    exampleFetchAction: () => (dispatch: ThunkDispatch<{}, {}, any>) => Promise<any>
+}
+
+function exampleAction(example: number): Action<number> {
     return {
         type: ActionType.EXAMPLE,
         payload: example
     }
 }
 
-export function exampleFetchAction(): (dispatch: ThunkDispatch<{}, {}, any>) => Promise<any> {
+function exampleFetchAction(): (dispatch: ThunkDispatch<{}, {}, any>) => Promise<any> {
     return async function(dispatch: ThunkDispatch<{}, {}, any>): Promise<any> {
         const response: AxiosResponse<any[]> = await jsonPlaceholder.get('/posts');
         dispatch({
@@ -18,4 +23,9 @@ export function exampleFetchAction(): (dispatch: ThunkDispatch<{}, {}, any>) => 
             payload: response.data
         })
     }
+}
+
+export const exampleActions: ExampleActions = {
+    exampleFetchAction,
+    exampleAction
 }

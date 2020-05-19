@@ -11,7 +11,7 @@ import { actions } from '../../actions/actions';
 export const ChangeLanguage: React.FC<{}> = (): JSX.Element => {
     const { formatMessage } = useIntl();
     const dispatch: Dispatch = useDispatch();
-    const { changeLocale } = actions;
+    const { changeLocale } = actions.localeActions;
     const locale: Locale = useSelector<RootState, Locale>((state: RootState): Locale => state.locale);
 
     return (

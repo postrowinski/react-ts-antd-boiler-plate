@@ -1,4 +1,4 @@
-import { exampleFetchAction } from './../actions/exampleAction';
+import { exampleActions } from './../actions/exampleAction';
 import { combineReducers, Reducer } from 'redux';
 import { exampleReducer } from './exampleReducer';
 import { localeReducer } from './localeReducer';
@@ -12,6 +12,6 @@ export interface RootState {
 
 export const reducer: Reducer<RootState> = combineReducers({
     example: exampleReducer,
-    exampleFetch: exampleFetchAction,
+    exampleFetch: exampleActions.exampleFetchAction,
     locale: localeReducer
 });
