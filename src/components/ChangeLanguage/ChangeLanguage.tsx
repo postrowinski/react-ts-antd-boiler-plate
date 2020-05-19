@@ -1,39 +1,29 @@
 import * as React from 'react';
-import { connect, ConnectedComponent } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'antd';
-import { changeLocal, Local } from '../../actions/localAction';
+import { Locale } from '../../actions/localeAction';
 import { useIntl } from 'react-intl';
+import { Dispatch } from 'redux';
+import { Action } from '../../actions/actionTypes';
+import { RootState } from '../../reducers/reducer';
+import { actions } from '../../actions/actions';
 
-interface State {
-    local: Local;
-}
+export const ChangeLanguage: React.FC<{}> = (): JSX.Element => {
+    const { formatMessage } = useIntl();
+    const dispatch: Dispatch = useDispatch();
+    const { changeLocale } = actions;
+    const locale: Locale = useSelector<RootState, Locale>((state: RootState): Locale => state.locale);
 
-interface Props extends State {
-    changeLocal?: (local: Local) => void;
-}
-
-const ChangeLanguageBody: React.FC<Props> = (props: Props): JSX.Element => {
-    const { formatMessage } = useIntl()
     return (
         <>
-            {props.local === 'pl' ?
-                <Button type='primary' onClick={(): void => props.changeLocal!('en')}>
+            {locale === 'pl' ?
+                <Button type='primary' onClick={(): Action<Locale> => dispatch(changeLocale('en'))}>
                     {formatMessage({id: 'local.english'})}
                 </Button> :
-                <Button type='primary' onClick={(): void => props.changeLocal!('pl')}>
+                <Button type='primary' onClick={(): Action<Locale> => dispatch(changeLocale('pl'))}>
                     {formatMessage({id: 'local.polish'})}
                 </Button>
             }
         </>
     );
 }
-
-function mapStateToProps(state: State): State {
-    return { local: state.local }
-}
-
-declare type ChangeLanguageType = ConnectedComponent<React.FC<Props>, Pick<Props, never>>;
-export const ChangeLanguage: ChangeLanguageType = connect(
-    mapStateToProps,
-    { changeLocal }
-)(ChangeLanguageBody);

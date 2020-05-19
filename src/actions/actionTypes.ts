@@ -6,5 +6,5 @@ export interface Action<T> {
 export enum ActionType {
     EXAMPLE = 'EXAMPLE',
     FETCH_EXAMPLE = 'FETCH_EXAMPLE',
-    CHANGE_LOCAL = 'CHANGE_LOCAL'
+    CHANGE_LOCALE = 'CHANGE_LOCALE'
 }

@@ -1,34 +1,22 @@
 import * as React from 'react';
 import { IntlProvider } from 'react-intl';
 import Navigation from '../Navigation/Navigation';
-import { connect, ConnectedComponent } from 'react-redux';
 import { ChangeLanguage } from '../ChangeLanguage/ChangeLanguage';
-import { Local } from '../../actions/localAction';
+import { Locale } from '../../actions/localeAction';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../reducers/reducer';
 
 export const localeData: any = {
     "en": require( "../../locales/messages_en.json"),
     "pl": require( "../../locales/messages_pl.json")
 };
 
-interface State {
-    local: Local;
-}
-
-// tslint:disable-next-line
-interface Props extends State {}
-
-const IntlBody: React.FC<Props> = (props: Props): JSX.Element => {
+export const Intl: React.FC<{}> = (): JSX.Element => {
+    const locale: Locale = useSelector<RootState, Locale>((state: RootState): Locale => state.locale);
     return (
-        <IntlProvider locale={props.local} messages={localeData[props.local]}>
+        <IntlProvider locale={locale} messages={localeData[locale]}>
             <ChangeLanguage />
             <Navigation />
         </IntlProvider>
     )
 }
-
-function mapStateToProps(state: State): State {
-    return { local: state.local };
-}
-
-declare type IntlType = ConnectedComponent<React.FC<Props>, Pick<Props, never>>;
-export const Intl: IntlType = connect(mapStateToProps)(IntlBody);
