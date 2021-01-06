@@ -82,7 +82,7 @@
   },
   "dependencies": {
     "antd": "^3.25.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "formik": "^2.1.4",
     "react-intl": "^4.5.0",
     "react-redux": "^7.2.0",
