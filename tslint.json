@@ -1,21 +1,24 @@
 {
-  "extends": ["tslint:recommended"],
-  "rules": {
-    "interface-name": false,
-    "typedef": [
-      true, 
-      "call-signature",
-      "arrow-call-signature", 
-      "variable-declaration",
-      "parameter", 
-      "arrow-parameter", 
-      "member-variable-declaration"
-    ],
-    "only-arrow-functions": false,
-    "quotemark": false,
-    "object-literal-key-quotes": false,
-    "trailing-comma": false,
-    "member-ordering": false,
-    "variable-name": [true, "ban-keywords", "allow-leading-underscore"]
+    "extends": ["tslint:recommended"],
+    "rules": {
+      "interface-name": false,
+      "typedef": [
+        true, 
+        "call-signature",
+        "arrow-call-signature", 
+        "variable-declaration",
+        "parameter", 
+        "arrow-parameter", 
+        "member-variable-declaration"
+      ],
+      "quotemark": false,
+      "object-literal-key-quotes": false,
+      "trailing-comma": false,
+      "member-ordering": false,
+      "ordered-imports": false,
+      "no-var-requires": false,
+      "object-literal-sort-keys": false,
+      "no-string-literal": false
+    }
   }
-}
+  

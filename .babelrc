@@ -5,10 +5,7 @@
   ],
   "plugins": [
     "react-hot-loader/babel",
-    ["import", {
-      "libraryName": "antd",
-      "style": true
-    }]
+    "@babel/plugin-proposal-class-properties"
   ],
   "env": {
     "production": {

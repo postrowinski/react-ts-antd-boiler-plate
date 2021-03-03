@@ -1,7 +1,11 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
-        "sourceMap": true,
+        "baseUrl": ".",
+        "paths": { 
+            "*": ["types/*"],
+            "tslib" : ["./node_modules/tslib/tslib.d.ts"]
+        },
+        "typeRoots" : ["./types", "./node_modules/@types"],
         "forceConsistentCasingInFileNames": true,
         "strictPropertyInitialization": true,
         "allowSyntheticDefaultImports": true,
@@ -13,16 +17,17 @@
         "esModuleInterop": true,
         "noUnusedLocals": true,
         "noImplicitThis": true,
-        "declarationDir": "dist-types",
+        "declarationDir": "build-types",
         "importHelpers": true,
-        "noImplicitAny": true,
         "skipLibCheck": true,
         "declaration": true,
-        "noResolve": false,
-        "module": "es2015",
-        "target": "es2015",
+        "resolveJsonModule": true,
+        "outDir": "./build/",
+        "sourceMap": true,
+        "module": "commonjs",
+        "target": "es5",
         "jsx": "react",
-        "lib": ["es5", "es2015", "dom"]
+        "lib": ["es5", "es6", "dom"]
     },
     "include": [
         "./src/**/*"

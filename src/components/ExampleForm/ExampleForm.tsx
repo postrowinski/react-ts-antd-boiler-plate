@@ -6,7 +6,10 @@ import * as _ from 'lodash';
 import { useIntl } from 'react-intl';
 import { ExampleFormDTO } from '../../../types/rest';
 
+const { useForm } = Form;
+
 export const ExampleForm: React.FC<{}> = (): JSX.Element => {
+    useForm();
     const { formatMessage } = useIntl();
     const formik: FormikProps<ExampleFormDTO> = useFormik<ExampleFormDTO>({
         enableReinitialize: true,
@@ -27,7 +30,7 @@ export const ExampleForm: React.FC<{}> = (): JSX.Element => {
     }
 
     return (
-        <Form style={{maxWidth: 400, margin: 'auto'}} onSubmit={formik.handleSubmit}>
+        <Form style={{maxWidth: 400, margin: 'auto'}} onFinish={formik.handleSubmit}>
             <Form.Item
                 label={formatMessage({id: 'form.example.name'})}
                 required

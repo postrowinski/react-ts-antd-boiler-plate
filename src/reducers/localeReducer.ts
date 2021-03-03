@@ -1,5 +1,5 @@
 import { Action, ActionType } from '../actions/actionTypes';
-import * as _ from 'lodash';
+import  _ from 'lodash';
 import { Locale } from '../actions/localeAction';
 const localeStorageLanguageKey: 'lang' = 'lang'
 const getLanguage: Locale | null = localStorage.getItem(localeStorageLanguageKey) as Locale | null;
